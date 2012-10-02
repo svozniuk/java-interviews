@@ -1,0 +1,9 @@
+------------------------------------------------------------------------------------------
+Java IO
+------------------------------------------------------------------------------------------
+TODO: find more questions
+
+
+12. What is a stream and what are the types of Streams and classes of the Streams?
+13. What is the difference between Reader/Writer and InputStream/Output Stream?
+14. What is an I/O filter?

@@ -1,0 +1,23 @@
+------------------------------------------------------------------------------------------
+Generics
+------------------------------------------------------------------------------------------
+
+1. What is Generics in Java ? What are advantages of using Generics?
+2. How Generics works in Java ? What is type erasure ?
+3. What is Bounded and Unbounded wildcards in Generics ?
+4. What is difference between List<? extends T>  and  List <? super T> ?
+5. How to write a generic method which accepts generic argument and return Generic Type?
+6. How to write parametrized class in Java using Generics ?
+7. Write a program to implement LRU cache using Generics ?
+8. Can you pass List<String> to a method which accepts List<Object>
+9. Can we use Generics with Array?
+10. How can you suppress unchecked warning in Java ?
+11. Difference between List<Object> and raw type List in Java?
+12. Difference between List<?> and List<Object> in Java?
+13. Difference between List<String> and raw type List.
+14. What does the Class Enum<E extends Enum<E>> ensure?
+15. Is <T> List<? extends T> x() a useful signature?
+16. Examples of a valid generic type that cannot be expressed with the Java type system and will lead to compiler warnings.
+17. Examples where the java compiler will/will not infere the generic type? (examples of code where the compiler will infere the wrong type)
+18. What generic type information is not erased and can be retrieved from the byte code? (Super type tokes are one application)
+19. What's APT (use cases when not to use reflection)?
