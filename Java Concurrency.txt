@@ -132,8 +132,8 @@ Concurrency
         String s1 = "S1";
         String s2 = "S2";
         
-        Thread t1 = new Thread(new deadlockCause(s1, s2));
-        Thread t2 = new Thread(new deadlockCause(s2, s1));
+        Thread t1 = new Thread(new DeadlockCause(s1, s2));
+        Thread t2 = new Thread(new DeadlockCause(s2, s1));
         
         t1.start();
         t2.start();
@@ -158,7 +158,7 @@ Concurrency
 	            try {
 	                Thread.sleep(1000);
 	            } catch (InterruptedException ex) {
-	                Logger.getLogger(deadlockCause.class.getName()).log(Level.SEVERE, null, ex);
+	                Logger.getLogger(DeadlockCause.class.getName()).log(Level.SEVERE, null, ex);
 	            }
 	            
 	            System.out.println(Thread.currentThread().getName() +  " tries to get the lock on " + secondLock);

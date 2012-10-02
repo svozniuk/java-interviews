@@ -68,7 +68,7 @@ Exceptions
 16. Pros and cons of using exceptions vs. returning "error value"
 
 	Exceptions provide clearer understanding and better code
-	Exceptions can be grouped together to be hanlded
+	Exceptions can be grouped together to be handled
 	Exceptions can be propagated up in the call stack to be handled where they are supposed to be handled.
 	Exception handling could be slow.
 	In some sense Exceptions are unignorable error codes.
