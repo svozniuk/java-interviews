@@ -42,16 +42,16 @@ What are the types of Dependency Injection Spring supports?
   Injecting into bean properties
 
 Autowiring. Types of autowiring.
-  byName—Attempts to match all properties of the autowired bean with beans
-    that have the same name (or ID) as the properties. Properties for which there’s
-    no matching bean will remain unwired.
-  byType—Attempts to match all properties of the autowired bean with beans
-    whose types are assignable to the properties. Properties for which there’s no
-    matching bean will remain unwired.
-  constructor—Tries to match up a constructor of the autowired bean with
-    beans whose types are assignable to the constructor arguments.
-  autodetect—Attempts to apply constructor autowiring first. If that fails,
-    byType will be tried.
+  byName      Attempts to match all properties of the autowired bean with beans
+              that have the same name (or ID) as the properties. Properties for which there’s
+              no matching bean will remain unwired.
+  byType      Attempts to match all properties of the autowired bean with beans
+              whose types are assignable to the properties. Properties for which there’s no
+              matching bean will remain unwired.
+  constructor Tries to match up a constructor of the autowired bean with
+              beans whose types are assignable to the constructor arguments.
+  autodetect  Attempts to apply constructor autowiring first. If that fails,
+              byType will be tried.
 
 What are inner beans.
   Inner beans are beans that are defined within the scope of another bean.
@@ -77,10 +77,10 @@ What modules does Spring Framework have?
     http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/overview.html
 
 Could you please tell us about Spring? What is the most important feature(s) of Spring?
-  ? Lightweight and minimally invasive development with plain old Java objects(POJOs)
-  ? Loose coupling through dependency injection and interface orientation
-  ? Declarative programming through aspects and common conventions
-  ? Boilerplate reduction through aspects and templates
+  Lightweight and minimally invasive development with plain old Java objects(POJOs)
+  Loose coupling through dependency injection and interface orientation
+  Declarative programming through aspects and common conventions
+  Boilerplate reduction through aspects and templates
 
 What are ORM’s Spring supports ?
   Spring provides support for several persistence frameworks, including Hibernate,
