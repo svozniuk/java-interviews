@@ -1,4 +1,4 @@
 java-interviews
 ===============
 
-A collection of Java interview questions nd my answers to them
+A collection of Java interview questions and my answers to them
