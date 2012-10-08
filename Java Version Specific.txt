@@ -41,8 +41,9 @@ Java 5 specifics
 	@Deprecated -- to inform that the method is deprecated
 	@Override -- to inform that this method has to override a method in a superclass. Helps to find errors.
 	@SuppressWarnings -- to suppress warnings. E.g. warnings generated when doing potentially unsafe cast
+	@SafeVarargs -- the implementation of the method will not improperly handle the varargs formal parameter with a type parameter
 
-16. Annotation retentions policies and why they are in place?
+7. Annotation retentions policies and why they are in place?
 	
 	The retention policies specify how long annotations are to retained.
 
@@ -52,7 +53,7 @@ Java 5 specifics
 
 	SOURCE:  Annotations are to be discarded by the compiler. (Example: @Override, @SuppressWarnings)
 
-17. Suppose you would like to reuse a class in different contexts would you use annotations or external configuration? (i.e. annotation introduce dependencies).
+8. Suppose you would like to reuse a class in different contexts would you use annotations or external configuration? (i.e. annotation introduce dependencies).
 	
 	Good discussion of this question can be found here 
 	http://javidjamae.com/2006/11/19/annotations-vs-xml/
