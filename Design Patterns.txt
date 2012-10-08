@@ -1,6 +1,7 @@
 ------------------------------------------------------------------------------------------
 Design Patterns
 ------------------------------------------------------------------------------------------
+http://stackoverflow.com/questions/1673841/examples-of-gof-design-patterns
 
 1. What are some alternatives to inheritance?
 
