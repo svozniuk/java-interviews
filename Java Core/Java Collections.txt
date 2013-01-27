@@ -44,7 +44,7 @@ Collections
 
 	List -- storing values in specified order. Provides methods to get the element by its position get(i), finding element, ListIterator. Known implementations: ArrayList, Vector, LinkedList. List should be used when the order in which the elements are stored matters.
 
-	Set -- storing only different objects and at most one null element. Known implementations: TreeSet (iterate over the elements in order defined by Comparator, or if the elements implement comparable; provides log(n) performance for basic operations), HashSet -- stores values in buckest defined by their hashcodes. Each bucket is a singly linked list. Provides constant time performance for basic operations. LinkedHashSet
+	Set -- storing only different objects and at most one null element. Known implementations: TreeSet (iterate over the elements in order defined by Comparator, or if the elements implement comparable; provides log(n) performance for basic operations), HashSet -- stores values in buckets defined by their hashcodes. Each bucket is a singly linked list. Provides constant time performance for basic operations. LinkedHashSet
 
 	Map -- for storing key-value pairs. Map cannot contain duplicate keys. Provides three collection views: set of keys, collection of values, set of key-value mappings. Know implementations HashMap, EnumMap, TreeMap, LinkedHashMap, WeakHashMap.
 
@@ -62,19 +62,19 @@ Collections
 
 9. What are relationships between equals and hash codes?
 
-	See above.
+	See in Java Basics.
 
 10. What are the advantages of ArrayList over arrays ?
 
 	1. ArrayList comes with a number of utility methods (e.g. contains, remove, addAll)
 	2. Type safety
 	3. Dynamic sizing
-	On the other hand arrays are a little bit faster and take less memory (packing)
+	On the other hand arrays are a little bit faster and take less memory (packing). Arrays are also able to contain values of primitive types while ArrayList can only contain Objects.
 
 11. Principle of storing data in a hashtable
 
-	HashSet. add(element) -> element.hashCode() -> mod bucketsNumber -> store
-	HashMap. add(key, value) -> key.hashCode() -> mod bucketsNumber -> store(value)
+	HashSet. add(element) -> element.hashCode() -> mod bucketsCount -> store
+	HashMap. add(key, value) -> key.hashCode() -> mod bucketsCount -> store(value)
 
 12. Differences between Hashtable, ConcurrentHashMap and Collections.synchronizedMap()
 

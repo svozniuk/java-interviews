@@ -44,7 +44,7 @@ Java Basics
 
 5. What is an abstract class?
 
-	An abstract class is a java class that has one or more absract methods (no body). Abstract classes cannot be instantiated. Abstract class defines an interface that has to be implemented by all its subclasses.
+	An abstract class is a java class that has one or more abstract methods (no body). Abstract classes cannot be instantiated. Abstract class defines an interface that has to be implemented by all its subclasses.
 
 6. What is static in java?
 
@@ -86,8 +86,12 @@ Java Basics
 
 13. What are different types of inner classes?
 
-	if declared with static -- it's nested class. Nested classes are fairly independent and treated as top-level classes. But the constructor call is different.
+	if declared with static -- it's nested class. Nested classes are fairly independent and treated as top-level classes. But the constructor call is different. 
+	To construct one: new OuterClassNeme.InnerClassName().
+
 	if declared without static -- inner class. Each instance of inner class can only exist within an instance of the outer class.
+	To construct one: instanceOfOuterClass.new InnerClassName()
+
 	local class -- declared and visible only within a block of code
 	anonymous -- same, but they don't even have a name.
 
@@ -170,7 +174,7 @@ Java Basics
 
 33. What is the default value of the local variables?
 
-	No default value. Default values are assigne to instance fields. Local variables have to be explicitly initialized.
+	No default value. Default values are assigned to instance fields. Local variables have to be explicitly initialized.
 
 34. Does garbage collection guarantee that a program will not run out of memory?
 
@@ -182,7 +186,7 @@ Java Basics
 
 36. Can a public class MyClass be defined in a source file named YourClass.java?
 
-	no. Unless it is a nested public class.
+	no. Unless it is a nested class public class.
 
 37. What will be the output of the following statement? System.out.println ("1" + 3);
 
@@ -261,9 +265,10 @@ Java Basics
 	
 	Recovering lost sources?TODO????????
 
-51. How is th virtual space divided in Java?
+51. How is the virtual space divided in Java?
 
 	http://stackoverflow.com/questions/1262328/how-is-the-java-memory-pool-divided
+	http://docs.oracle.com/javase/6/docs/technotes/guides/management/jconsole.html
 
 52. What difference between float and BigDecimal. How they store the data?
 
@@ -368,7 +373,7 @@ Java Basics
 	super() calls the superclass constructor
 	super() has to be the first statement of subclass constructor;
 	this and super are references to the current object and to current object treated as superclass.
-	this.new Something() has to be used inner classes
+	this.new Something() has to be used to create inner classes
 
 70. What is the difference between superclass and subclass?
 
@@ -413,7 +418,7 @@ Java Basics
 
 80. How does Java handle integer overflows and underflows?
 
-	TODO: ...
+	It goes down to the MIN_INT value in case of overflow and to MAX_INT in case of overflow
 
 Main method
 ---------------

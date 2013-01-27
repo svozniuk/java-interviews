@@ -16,7 +16,7 @@ Concurrency
 	
 	Not exactly a correct question.
 
-	A scheduler can be preemptive (it's capable to force a process to interrupt its execution and resume it in some time) and non-preemptive (which is unable to interrupt a process and relies on the processes themselves that voluntarily give control to other tasks). Time slicing is a usual technique to that is used in a preemptive multitasking system. The scheduler is run every time slice to choose the next process to run (it may happen that it's the same process during few time slices in a row, or it may happen that every time slice a different process is executed )
+	A scheduler can be preemptive (it's capable to force a process to interrupt its execution and resume it in some time) and non-preemptive (which is unable to interrupt a process and relies on the processes themselves that voluntarily give control to other tasks). Time slicing is a usual technique that is used in a preemptive multitasking system. The scheduler is run every time slice to choose the next process to run (it may happen that it's the same process during few time slices in a row, or it may happen that every time slice a different process is executed )
 
 	To apply these terms to Java world -- replace the "process" with "thread", since the ideas behind scheduling processes in OS are the same as scheduling threads in an application.
 	
@@ -77,7 +77,7 @@ Concurrency
     notifyAll( ) wakes up all the threads that called wait( ) on the same object. 
 
 
-9. What does it mean Volatile keyword?
+9. What does Volatile keyword mean?
 
 	The volatile keyword guarantees that reads and from a variable will see the changes made by the last write to this variable (and of course all other writes that happened earlier). Java documentation states that volatile establishes a "happens-before" relationship between a write to a variable and all subsequent reads from it.
 
@@ -116,7 +116,7 @@ Concurrency
 
 16. What are the states associated in the thread?
 
-	http://www.science.uva.nl/ict/ossdocs/java/tutorial/java/threads/states.html
+	 
 
 17. When you will synchronize a piece of your code?
 
@@ -141,7 +141,7 @@ Concurrency
 	    }
 	}
 
-	class DeadlockCause implements Runnable{
+	class DeadlockCause implements Runnable {
 
 	    private final Object firstLock;
 	    private final Object secondLock;
@@ -207,3 +207,69 @@ Concurrency
 
 	AtomicInteger is a class from java.util.concurrent package that provides thread-safe implementation of an Integer.
 	More information on AtomicXXX can be found at http://docs.oracle.com/javase/6/docs/api/java/util/concurrent/atomic/package-summary.html
+
+
+------------------------------------------------------------------------------------------
+Advanced Concurrency Questions
+------------------------------------------------------------------------------------------
+
+The following questions have been taken from http://www.rsdn.ru/forum/java/3622844.all and translated into English
+Good set of answers can be found here http://swein2.blogspot.ch/2011/10/concurrency.html
+
+------------------------------------------------------------------------------------------
+
+Differences in JMM before Java 5 and after Java 5?
+What is the difference between Runnable and Callable?
+What is the difference between java.util.concurrent.Atomic*.compareAndSwap() and java.util.concurrent.Atomic*.weakCompareAndSwap()?
+What is the difference between Collections.synchronizedMap(new HashMap()) and ConcurrentHashMap?
+What is the difference between Thread.isInterrupted() and Thread.interrupted()?
+What is the difference between CountDownLatch and CyclicBarrier?
+What is the difference between ReenetrantLock and synchronized{}
+Can you list all the reasons when InterruptedException can be thrown?
+In SynchronousQueue what is unique for BlockingQueue?
+In the String class all the fields are final. Could we remove the final keyword, since the class doesn't have any setters and thus the fields cannot be changed.
+What happens when you call Thread.interrupt()?
+What are advantages of ScheduledThreadPool over java.util.Timer?
+Thread.getState() returns an instance of Thread.State. What are the possible values?
+ReentrantLock created with a true flag (fair) one of the methods to get the lock is not fair. Which one? When to use or not use it?
+Which of the following calls creates a happens-before relationship? Thread.sleep(), Thread.join(), Thread.yield(), Thread.start(), Thread.run(), Thread.isAlive(), Thread.getState()?
+Some of the following methods are deprecated, some have never been implemented. Which of them fall into which category? Thread.interrupt(), Thread.stop(), Thread.yield(), Thread.suspend(), Thread.resume(), Thread.join(), Thread.start(), Thread.run(), Thread.sleep()
+What are ordering, visibility, atomicity, happens-before, mutual exclusion? Which of the listed properties are retained when using volatile, AtomicInteger and synchronized{}? How?
+What do you know about asynchronous method calls? Do they exist in Java? If yes, how they are implemented? If no, how would you implement them?
+What is rendez-vous? Which Java classes can help?
+What is a "green thread"? Are they used in Java (in HotSpon JVM.6)?
+What is cooperative multitasking? Is it used in Java? If not then which type of multitasking is used in Java? What are the advantages. 
+What is false sharing? Could it happen in Java? If yes, how could you fight it? If no, how the JVM developers have overcome it?
+
+Explain safe publication.
+Explain recursive parallelism.
+Explain iterative parallelism.
+Tell something about Reactor/Proactor patterns.
+What does reentrant property mean?
+List the ways to fight priority inversion. Name the types of systems where they are extremely dangerous.
+Name the ways to a) avoid b) overcome a deadlock (imagine you're writing a RDBMS kernel)
+
+What is monitor?
+What is private mutex?
+What is priority inheritance?
+What is back-off protocol (exponential back-off)?
+What is task-stealing?
+What is spin lock?
+What is sequential consistency?
+What is ABA problem?
+What is "test and set"?
+What is "test and set and set"?
+What is "sense reversing barrier"?
+What is pipeline?
+What is poison message?
+What is mutual exclusion? Examples.
+What is condition waiting? Examples.
+
+Implement a simple nonblocking stack (only push() and pop())
+Implement a simple copy-on-write ArrayList (void add(int index, T item), T get(int index), void remove(int index), int size())
+Implement a simple buffer for multiple producers / multiple consumers using synchronized{}
+Implement a simple buffer for multiple producers / multiple consumers using ReentrantLock
+
+
+
+

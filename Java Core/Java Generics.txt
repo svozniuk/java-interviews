@@ -148,7 +148,6 @@ Questions
 15. Difference between List<?> and raw type List.
 
 	The raw type and the unbounded wildcard parameterized type have a lot in common.  Both act as kind of a supertype of all instantiations of the corresponding generic type.  Both are so-called reifiable types. Reifiable types can be used in instanceof expressions and as the component type of arrays, where non-reifiable types (such as concrete and bounded wildcard parameterized type) are not permitted. 
-
 	In other words, the raw type and the unbounded wildcard parameterized type are semantically equivalent.  The only difference is that the compiler applies stricter rules to the unbounded wildcard parameterized type than to the corresponding raw type. Certain operations performed on the raw type yield "unchecked" warnings.  The same operations, when performed on the corresponding  unbounded wildcard parameterized type, are rejected as errors. 
 
 16. Is <T> List<? extends T> x() a useful signature?
@@ -166,26 +165,79 @@ Questions
 
 18. Examples of a valid generic type that cannot be expressed with the Java type system and will lead to compiler warnings.
 
+	from http://stackoverflow.com/questions/12254897/a-bug-in-java-type-system
 
+	interface IProducer<T extends Comparable<T>> {
+    	public Map<Integer, T> getResults();
+	}
+
+	interface IEvaluator {
+    	public <T extends Comparable<T>> double evaluate(Map<Integer, T> results,
+            Map<Integer, Double> groundTruth);
+	}
+	
+	List<IProducer<?>> producerImplementations = lookUpProducers();
+
+    // dynamically load evaluators
+    List<IEvaluator> evaluatorImplementations = lookUpEvaluators();
+
+    // pick a producer
+    IProducer<?> producer = producerImplementations.get(0);
+
+    // pick an evaluator
+    IEvaluator evaluator = evaluatorImplementations.get(0);
+
+    // evaluate the result against the ground truth
+    Map<Integer, ?> data = producer.getResults(); // this type works
+    double score = evaluator.evaluate(data, groundTruth); // but now this call does not
+
+    You cannot express a type for data in Java type system. It is just not expressible enough.
+    But one can still make the following call and it will work
+
+    double score = evaluator.evaluate(producer.getResults(), groundTruth); 
 
 19. Examples where the java compiler will/will not infere the generic type? (examples of code where the compiler will infere the wrong type)
 
-
+	No idea
 
 20. What generic type information is not erased and can be retrieved from the byte code? 
 
+	Example:
 
+	public class TypeReference<T> {
 
-21. What's APT (use cases when not to use reflection)?
+		private final Type type;
 
+		public TypeReference() {
+	        Type superclass = getClass().getGenericSuperclass();
+	        if (superclass instanceof Class) {
+	            throw new RuntimeException("Missing type parameter.");
+	        }
+	        this.type = ((ParameterizedType) superclass).getActualTypeArguments()[0];
+		}		
+	}
 
+	You are able to get the information about the type used to parametrize this class via getActualTypeArguments (reflection)
 
-22. What does the Class Enum<E extends Enum<E>> ensure?
+21. What does the Class Enum<E extends Enum<E>> ensure?
 
+	http://stackoverflow.com/questions/211143/java-enum-definition?lq=1
 
+	It means that the type argument for enum has to derive from an enum which itself has the same type argument. How can this happen? By making the type argument the new type itself. So if I've got an enum called StatusCode, it would be equivalent to:
 
-23. If the compiler erases all type parameters at compile time, why should you use generics?
+	public class StatusCode extends Enum<StatusCode>
 
+	Now if you check the constraints, we've got Enum<StatusCode> - so E=StatusCode. Let's check: does E extend Enum<StatusCode>? Yes! We're okay.
+
+	You may well be asking yourself what the point of this is :) Well, it means that the API for Enum can refer to itself - for instance, being able to say that Enum<E> implements Comparable<E>. The base class is able to do the comparisons (in the case of enums) but it can make sure that it only compares the right kind of enums with each other.
+
+22. If the compiler erases all type parameters at compile time, why should you use generics?
+
+	While the compiler erases all type parameters it still performs all the checks on generic code at compile time. Additionally generics enable you to implement generic algorithms.
+
+23. Super type tokens
+
+	http://gafter.blogspot.ch/2006/12/super-type-tokens.html
 
 
 Write yourself

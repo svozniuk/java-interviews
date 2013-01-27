@@ -43,7 +43,7 @@ Exceptions
 
 10. When should you use which approach?
 
-	As I understand one should handle the exception if he/she has all the knowledge and resources to do so. And the exception has to be handled as soon as this knowledge is aquired. However if you are writing a library you may consider declaring the exceptions that are thrown and force the user of the library to decide how to react to a specific situation. The downside of this approach is that declared exceptions become the part of the API which has to be fixed after being published. 
+	As I understand one should handle the exception if he/she has all the knowledge and resources to do so. And the exception has to be handled as soon as this knowledge is aquired. However if you are writing a library you may consider declaring the exceptions that are thrown and force the user of the library to decide how to react to a specific situation. The downside of this approach is that declared exceptions become the part of the API which has to be frozen after being published. 
 
 11. Is it necessary that each try block must be followed by a catch block?
 
