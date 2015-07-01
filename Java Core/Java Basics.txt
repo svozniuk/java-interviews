@@ -53,6 +53,7 @@ Java Basics
 	b) When used with a field defines a class field.
 	c) When used on an nested class declaration defines a static nested class.
 	d) Also can be used for static initialization block.
+	e) Can be used as a static initialization block
 
 7. What is final?
 
