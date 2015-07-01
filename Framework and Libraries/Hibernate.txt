@@ -59,7 +59,7 @@ Lazy loading
   every child. In order to avoid this, you can trick hibernate into loading
   all children simultaneously, e.g. by calling parent.getChildren().size().
 
-What do you mean by Named – SQL query and how to invoke it?
+What do you mean by Named ï¿½ SQL query and how to invoke it?
   Named SQL queries may be defined in the mapping document and called in exactly
   the same way as a named HQL query. In this case, we do not need to call
   addEntity().
@@ -90,11 +90,11 @@ What is the difference between sorted and ordered collection in hibernate?
     it will be more efficient way to sort it.
 
 Difference between get() and load()?
-  If load() can’t find the object in the cache or database, an exception is
+  If load() canï¿½t find the object in the cache or database, an exception is
   thrown. The load() method never returns null. The get() method returns
-  null if the object can’t be found.
+  null if the object canï¿½t be found.
   The load() method may return a proxy instead of a real persistent instance.
-  A proxy is a placeholder that triggers the loading of the real object when it’s
+  A proxy is a placeholder that triggers the loading of the real object when itï¿½s
   accessed for the first time; we discuss proxies later in this section. On the
   other hand, get() never returns a proxy.
 
@@ -116,16 +116,16 @@ What are the types of Hibernate instance states ?
     relationship between persistent identity and Java identity.
 
 Hierarchy-to-tables mapping strategies //todo check with reference doc (table per class hierarchy | table per subclass | table per concrete class | implicit polymorphism )
-    Table per concrete class with implicit polymorphism—Use no explicit
+    Table per concrete class with implicit polymorphismï¿½Use no explicit
   inheritance mapping, and default runtime polymorphic behavior.
   You can use exactly one table for each (nonabstract) class.
   All properties of a class, including inherited properties, can be mapped to
   columns of this table,
-    Table per concrete class—Discard polymorphism and inheritance relationships
+    Table per concrete classï¿½Discard polymorphism and inheritance relationships
   completely from the SQL schema. Table per concrete class with unions.
   If your superclass is concrete, then an additional table is needed to hold
   instances of that class.
-    Table per class hierarchy—Enable polymorphism by denormalizing the SQL
+    Table per class hierarchyï¿½Enable polymorphism by denormalizing the SQL
   schema, and utilize a type discriminator column that holds type information.
   An entire class hierarchy can be mapped to a single table.
   This table includes columns for all properties of all classes in the hierarchy.
@@ -133,13 +133,13 @@ Hierarchy-to-tables mapping strategies //todo check with reference doc (table pe
   value of a type discriminator column.
   There is one major problem: Columns for properties declared by subclasses
   must be declared to be nullable.
-  Another important issue is normalization. We’ve created functional
+  Another important issue is normalization. Weï¿½ve created functional
   dependencies between nonkey columns, violating the third normal form.
-    Table per subclass—Represent is a (inheritance) relationships as has a
+    Table per subclassï¿½Represent is a (inheritance) relationships as has a
   (foreign key) relationships.
   The fourth option is to represent inheritance relationships as relational
   foreign key associations. Every class/subclass that declares persistent
-  properties—including abstract classes and even interfaces—has its own table.
+  propertiesï¿½including abstract classes and even interfacesï¿½has its own table.
   Unlike the table per concrete class strategy we mapped first, the table here
   contains columns only for each noninherited property (each property declared
   by the subclass itself) along with a primary key that is also a foreign key of
@@ -148,7 +148,7 @@ Hierarchy-to-tables mapping strategies //todo check with reference doc (table pe
   Schema evolution and integrity constraint definition are straightforward.
   A polymorphic association to a particular subclass may be represented as a
   foreign key referencing the table of that particular subclass.
-  As you can see, this mapping strategy is more difficult to implement by hand—
+  As you can see, this mapping strategy is more difficult to implement by handï¿½
   even ad-hoc reporting is more complex. This is an important consideration if
   you plan to mix Hibernate code with handwritten SQL.
   Furthermore, even though this mapping strategy is deceptively simple, our
@@ -160,7 +160,7 @@ What are the Collection types in Hibernate ?
   A collection is defined as a one-to-many reference. The simplest collection
   type in Hibernate is <bag>.This collection is a list of unordered objects and
   can contain duplicates. This is similar to java.util.List. The content of a
-  collection is required for a SQL query. This won’t work until the code is
+  collection is required for a SQL query. This wonï¿½t work until the code is
   actually accessed. This process has a benefit that allows the developer to
   separate the database access logic from that of the object traversal logic.
   This is called lazy collection.

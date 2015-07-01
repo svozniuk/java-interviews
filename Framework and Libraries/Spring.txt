@@ -1,14 +1,14 @@
 -----------------     Spring      -----------------
 
 Basic idea of IoC pattern. Benefits.
-    By applying DI in your projects, you’ll find that your code will
+    By applying DI in your projects, youï¿½ll find that your code will
   become significantly simpler, easier to understand, and easier to test.
     With DI, objects are given their dependencies at creation time
-  by some third party that coordinates each object in the system. Objects aren’t
-  expected to create or obtain their dependencies—dependencies are injected into the
+  by some third party that coordinates each object in the system. Objects arenï¿½t
+  expected to create or obtain their dependenciesï¿½dependencies are injected into the
   objects that need them.
-    The key benefit of DI—loose coupling. If an object only knows about its
-  dependencies by their interface (not by their implementation or how they’re
+    The key benefit of DIï¿½loose coupling. If an object only knows about its
+  dependencies by their interface (not by their implementation or how theyï¿½re
   instantiated), then the dependency can be swapped out with a different
   implementation without the depending object knowing the difference.
     One of the most common ways that a dependency will be swapped out is with a
@@ -43,10 +43,10 @@ What are the types of Dependency Injection Spring supports?
 
 Autowiring. Types of autowiring.
   byName      Attempts to match all properties of the autowired bean with beans
-              that have the same name (or ID) as the properties. Properties for which there’s
+              that have the same name (or ID) as the properties. Properties for which thereï¿½s
               no matching bean will remain unwired.
   byType      Attempts to match all properties of the autowired bean with beans
-              whose types are assignable to the properties. Properties for which there’s no
+              whose types are assignable to the properties. Properties for which thereï¿½s no
               matching bean will remain unwired.
   constructor Tries to match up a constructor of the autowired bean with
               beans whose types are assignable to the constructor arguments.
@@ -55,10 +55,10 @@ Autowiring. Types of autowiring.
 
 What are inner beans.
   Inner beans are beans that are defined within the scope of another bean.
-    Note that the inner beans don’t have an id attribute set. Though it’s perfectly legal
-  to declare an ID for an inner bean, it’s not necessary because you’ll never refer to the
+    Note that the inner beans donï¿½t have an id attribute set. Though itï¿½s perfectly legal
+  to declare an ID for an inner bean, itï¿½s not necessary because youï¿½ll never refer to the
   inner bean by name. This highlights the main drawback of using inner beans: they
-  can’t be reused. Inner beans are only useful for injection once and can’t be referred
+  canï¿½t be reused. Inner beans are only useful for injection once and canï¿½t be referred
   to by other beans.
     You may also find that using inner-bean definitions has a negative impact on the
   readability of the XML in the Spring context files.
@@ -82,7 +82,7 @@ Could you please tell us about Spring? What is the most important feature(s) of 
   Declarative programming through aspects and common conventions
   Boilerplate reduction through aspects and templates
 
-What are ORM’s Spring supports ?
+What are ORMï¿½s Spring supports ?
   Spring provides support for several persistence frameworks, including Hibernate,
   iBATIS, Java Data Objects (JDO), and the Java Persistence API (JPA).
 
