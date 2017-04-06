@@ -261,12 +261,14 @@ Are database Indexes useful? What is the role of them?
   well as data volumes increase.
 
 Why many indexes are not good for performance
-todo
+Too many indexes will result in more frequent INDEX REBUILD operations which are costly to the database table.
+If a table has many indexes and is read heavy and has very less writes (UPDATE / INSERT) instead of SELECT then Indexes will actually speed up the query.
+However if there are too many indexes and table has frequent writes then costly Index Rebuild operations will be very frequent.
 
 What does it mean database de-normalization?
 todo
 
-Which of SELECT, UPDATE, DELETE, ADD�s performance is mostly affected by performance of indexes?
+Which of SELECT, UPDATE, DELETE, ADDs performance is mostly affected by performance of indexes?
 todo
 
 What are ways to increase performance of database
