@@ -18,30 +18,30 @@ Java Basics
 
 4. **State the significance of public, private, protected, default modifiers both singly and in combination and state the effect of package relationships on declared items qualified by these modifiers.**
 
-    public
-        class         -- accessible from anywhere. Can be subclassed by anyone (if not declared final)
-        method         -- accessible from anywhere. Can be overriden in subclasses.
-        variable     -- accessible from anywhere. Usually not a good practice except for the constants
-        inner class -- accessible from anywhere.
-        nested class-- accessible from anywhere.
-    private
-        class         -- only for inner classes.
-        method      -- accessible only from the class where it is declared. Cannot be overridden
-        variable     -- accessible only from the class where it is declared
-        inner class -- same
-        nested class-- same
-    protected
-        class         -- only for inner classes
-        method         -- accessible from the same package or from any subclass
-        variable     -- same
-        inner class -- same
-        nested class-- can be written but doesn't make sense (protected static!?)
-    default(no access modifier)
-        class         -- only this package and subclasses in this package
-        method         -- same
-        variable     -- same
-        inner class -- same
-        nested class-- same
+    * public  
+        class -- accessible from anywhere. Can be subclassed by anyone (if not declared final)  
+        method -- accessible from anywhere. Can be overriden in subclasses.  
+        variable -- accessible from anywhere. Usually not a good practice except for the constants  
+        inner class -- accessible from anywhere.  
+        nested class -- accessible from anywhere.  
+    * private  
+        class -- only for inner classes.  
+        method -- accessible only from the class where it is declared. Cannot be overridden  
+        variable -- accessible only from the class where it is declared  
+        inner class -- same  
+        nested class -- same  
+    * protected  
+        class -- only for inner classes  
+        method -- accessible from the same package or from any subclass  
+        variable -- same  
+        inner class -- same  
+        nested class -- can be written but doesn't make sense (protected static!?)  
+    * default (no access modifier)  
+        class -- only this package and subclasses in this package  
+        method -- same  
+        variable -- same  
+        inner class -- same  
+        nested class -- same 
 
 5. **What is an abstract class?**
 
@@ -49,18 +49,18 @@ Java Basics
 
 6. **What is static in java?**
 
-    static is Java Language keyword.
-    a) When used with a method defines a method of a class.
-    b) When used with a field defines a class field.
-    c) When used on an nested class declaration defines a static nested class.
-    d) Also can be used for static initialization block.
+    static is Java Language keyword.  
+    a) When used with a method defines a method of a class.  
+    b) When used with a field defines a class field.  
+    c) When used on an nested class declaration defines a static nested class.  
+    d) Also can be used for static initialization block.  
     e) Can be used as a static initialization block
 
 7. **What is final?**
 
-    final is Java Language keyword.
-    a) When used with a method protects it from being overridden in subclasses. Done for security and/or performance reasons.
-    b) When used with a field means that the value stored in the field cannon be changed after initialization. Not to be confused with immutability of the object.
+    final is Java Language keyword.  
+    a) When used with a method protects it from being overridden in subclasses. Done for security and/or performance reasons.  
+    b) When used with a field means that the value stored in the field cannon be changed after initialization. Not to be confused with immutability of the object.  
     c) When used with a class declaration protects it from being subclassed. Done for security and/or performance reasons. Also for immutability. Many of Java core classes are final (e.g. String)
 
 8. **How can one prove that the array is not null but empty using one line of code?**
