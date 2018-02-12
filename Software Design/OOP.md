@@ -2,4 +2,5 @@
 Beginner Questions
 ------------------------------------------------------------------------------------------
 What are Encapsulation, Inheritance and Polymorphism?
+
 What is OOP?
