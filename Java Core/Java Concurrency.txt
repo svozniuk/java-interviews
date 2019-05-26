@@ -39,7 +39,7 @@ Concurrency
 
         MyRunnable r = new MyRunnable();
         Thread t = new Thread(r);
-        r.start();
+        t.start();
 
     b)
         class MyThread extends Thread {
